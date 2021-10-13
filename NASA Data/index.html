@@ -6,10 +6,24 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Fetch and graph CVS file</title>
     <script src="https://cdn.jsdelivr.net/npm/chart.js@3.5.1/dist/chart.min.js"></script>
+
+    <style>
+       .chart__wrapper{
+           max-width: 80%;
+           margin: auto;
+       }
+
+       @media only screen and (max-width: 600px) {
+        .chart__wrapper{
+           max-width: 100%;
+       }
+       }
+    </style>
 </head>
+
 <body>
 
-    <div style="width:75%; margin: auto;">
+    <div class="chart__wrapper">
         <h2 style="text-align: center;">Global Average Temperature</h2>
         <canvas id="chart"></canvas>
 
