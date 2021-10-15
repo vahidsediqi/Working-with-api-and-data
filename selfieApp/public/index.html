@@ -7,24 +7,18 @@
     <title>Selfie App</title>
 </head>
 <body>
+<script>
+    if('geolocation' in navigator){
+      console.log('Geolocation available');
+      navigator.geolocation.getCurrentPosition(position => {
+        console.log(position.coords.latitude);
+        console.log(position.coords.longitude);
+      });
+    } else {
+       console.log('Geolocation not availble');
+    }
+</script>
+    
 
-    <ul>
-        <li>
-            <a href="/">Home</a>
-        </li>
-        <li>
-            <a href="/about.html">About</a>
-        </li>
-        <li>
-            <a href="/Blog.html">Blog</a>
-        </li>
-        <li>
-            <a href="/Contact.html">Contact Us</a>
-        </li>
-    </ul>
-    <h1>Welcome to Selfi App </h1>
-   
-
-    <script src="../js/main.js"></script>
 </body>
 </html>
