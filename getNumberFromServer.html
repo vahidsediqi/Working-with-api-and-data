@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Get number from server</title>
+
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta2/css/all.min.css" integrity="sha512-YWzhKL2whUzgiheMoBFwW8CKV4qpHQAEuvilg9FAn5VJUDwKZZxkJNuGM4XkWuk94WCrrwslk8yWNGmY1EduTA==" crossorigin="anonymous" referrerpolicy="no-referrer" />
+
+
+    <style>
+       .display-btn{
+           color: #2D2E83;
+           border: #2D2E83 3px solid;
+           border-radius: 50%;
+           font-size: 25px;
+           padding: 12px
+       }
+    </style>
+</head>
+<body>
+    
+
+
+<a class="display-btn" href=""><i class="fa fa-phone"></i></a>
+
+    <script>
+        
+        const btn = document.querySelector('.display-btn');
+        const url = ('https://seodata.github.io/telephon-numbers/numbers.json');
+        async function getData(){
+            const response = await fetch(url);
+            const data = await response.json();
+            btn.setAttribute('href', "tel:" + data.no);
+        }
+        getData();
+    </script>
+</body>
+</html>

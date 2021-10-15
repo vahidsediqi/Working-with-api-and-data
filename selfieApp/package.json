@@ -1,0 +1,19 @@
+{
+  "name": "selfieapp",
+  "version": "1.0.0",
+  "description": "This is a silfeApp by vahid sediqi",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "keywords": [
+    "example",
+    "slifeapp",
+    "dataapp"
+  ],
+  "author": "Vahid Sediqi",
+  "license": "MIT",
+  "dependencies": {
+    "express": "^4.17.1"
+  }
+}
