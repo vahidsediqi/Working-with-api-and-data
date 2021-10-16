@@ -7,17 +7,47 @@
     <title>Selfie App</title>
 </head>
 <body>
-<script>
-    if('geolocation' in navigator){
-      console.log('Geolocation available');
-      navigator.geolocation.getCurrentPosition(position => {
-        console.log(position.coords.latitude);
-        console.log(position.coords.longitude);
-      });
-    } else {
-       console.log('Geolocation not availble');
-    }
-</script>
+
+  <script>
+      if('geolocation' in navigator){
+        console.log('Geolocation available');
+        navigator.geolocation.getCurrentPosition(async position => {
+
+        const lat = position.coords.latitude;
+        const log = position.coords.longitude;
+        document.getElementById('lat').textContent = lat;
+        document.getElementById('log').textContent = log;
+
+        // sening post to my own api
+
+        const data = {lat, log};
+        const options = {
+          method: 'POST',
+          headers: {
+            'Content-Type': 'application/json'
+          },
+          body: JSON.stringify(data)
+        };
+
+        const response = await fetch('/api', options);
+         const resiveddata = await response.json();
+         console.log(resiveddata)
+        });
+      } else {
+         console.log('Geolocation not availble');
+      }
+  </script>
+
+<h1>Data Selfie App</h1>
+<p>
+  Latitude:<span id="lat"></span> &deg;
+  <br>
+  Logtitude:<span id="log"></span>  &deg; 
+</p>
+
+
+
+
     
 
 </body>
