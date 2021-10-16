@@ -18,8 +18,7 @@
         document.getElementById('lat').textContent = lat;
         document.getElementById('log').textContent = log;
 
-        // sening post to my own api
-
+        // sending post to my own api
         const data = {lat, log};
         const options = {
           method: 'POST',
@@ -29,7 +28,7 @@
           body: JSON.stringify(data)
         };
 
-        const response = await fetch('/api', options);
+        const response = await fetch('/myapiendpoint', options);
          const resiveddata = await response.json();
          console.log(resiveddata)
         });
