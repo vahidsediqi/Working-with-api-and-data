@@ -17,8 +17,8 @@
         const log = position.coords.longitude;
         document.getElementById('lat').textContent = lat;
         document.getElementById('log').textContent = log;
-
-        // sending post to my own api
+        document.querySelector('.btn').addEventListener('click', async ()=> {
+           // sending post to my own api
         const data = {lat, log};
         const options = {
           method: 'POST',
@@ -28,9 +28,11 @@
           body: JSON.stringify(data)
         };
 
-        const response = await fetch('/myapiendpoint', options);
+        const response = await fetch('/api', options);
          const resiveddata = await response.json();
-         console.log(resiveddata)
+         console.log(resiveddata);
+        })
+       
         });
       } else {
          console.log('Geolocation not availble');
@@ -44,7 +46,7 @@
   Logtitude:<span id="log"></span>  &deg; 
 </p>
 
-
+<button class="btn">Submit</button>
 
 
     

@@ -23,18 +23,27 @@
     
 
 
-<a class="display-btn" href=""><i class="fa fa-phone"></i></a>
+<!-- <a class="display-btn" href=""><i class="fa fa-phone"></i></a> -->
 
     <script>
         
-        const btn = document.querySelector('.display-btn');
-        const url = ('https://seodata.github.io/telephon-numbers/numbers.json');
-        async function getData(){
-            const response = await fetch(url);
-            const data = await response.json();
-            btn.setAttribute('href', "tel:" + data.no);
+        // const btn = document.querySelector('.display-btn');
+        // const url = ('https://seodata.github.io/telephon-numbers/numbers.json');
+        // async function getData(){
+        //     const response = await fetch(url);
+        //     const data = await response.json();
+        //     btn.setAttribute('href', "tel:" + data.no);
+        // }
+        // getData();
+
+
+        async function wpData(){
+            const res = await fetch ('https://elektriker-notdienstwien.at/wp-json/');
+            const data = await res.json();
+            console.log(data);
         }
-        getData();
+
+        wpData();
     </script>
 </body>
 </html>
